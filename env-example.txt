@@ -1,0 +1,62 @@
+# URGENT: Environment Variables Setup
+# আপনার system কাজ না করার কারণ - Environment Variables missing!
+
+# এই steps follow করুন:
+
+# 1. প্রজেক্ট রুটে .env.local নামে নতুন ফাইল তৈরি করুন
+# 2. নিচের content copy করুন (আপনার actual values দিয়ে):
+
+NEXT_PUBLIC_SUPABASE_URL=https://your-project-ref.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key_here
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key_here
+
+# Email Configuration (Gmail SMTP)
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=587
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASS=your-app-password
+EMAIL_FROM=your-email@gmail.com
+
+# 3. Supabase Dashboard থেকে keys নিন:
+#    - Supabase.com এ যান
+#    - আপনার project select করুন
+#    - Settings > API এ ক্লিক করুন
+#    - Project URL copy করুন
+#    - anon public key copy করুন  
+#    - service_role key copy করুন
+
+# 4. Server restart করুন:
+#    npm run dev
+
+# এই steps complete করার পর সব কিছু কাজ করবে!
+
+############################################################
+# Payment Gateway Configuration (bKash / Nagad / Rocket)
+# যেটা ব্যবহার করবেন সেটার জন্য নিচের কী গুলো পূরণ করুন
+############################################################
+
+# bKash
+BKASH_BASE_URL=https://sandbox.bka.sh/v1.2.0-beta
+BKASH_USERNAME=your_bkash_username
+BKASH_PASSWORD=your_bkash_password
+BKASH_APP_KEY=your_bkash_app_key
+BKASH_APP_SECRET=your_bkash_app_secret
+BKASH_CALLBACK_URL=http://localhost:3000/api/payment/callback/bkash
+
+# Nagad
+NAGAD_BASE_URL=https://sandbox.nagad.com.bd
+NAGAD_MERCHANT_ID=your_nagad_merchant_id
+NAGAD_PRIVATE_KEY=your_nagad_private_key
+NAGAD_PUBLIC_KEY=your_nagad_public_key
+NAGAD_CALLBACK_URL=http://localhost:3000/api/payment/callback/nagad
+
+# Rocket / DBBL Nexus
+ROCKET_BASE_URL=https://sandbox.dbdl.com.bd
+ROCKET_MERCHANT_ID=your_rocket_merchant_id
+ROCKET_SECRET=your_rocket_secret
+ROCKET_SUCCESS_URL=http://localhost:3000/checkout/success
+ROCKET_FAIL_URL=http://localhost:3000/checkout/failed
+ROCKET_CANCEL_URL=http://localhost:3000/checkout/cancel
+
+# NOTE:
+# - উপরের কী গুলো না থাকলে Online Payment অটো-ডিসেবল থাকবে, এবং Checkout-এ COD অটো সিলেক্ট হবে।
