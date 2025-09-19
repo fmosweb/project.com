@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1",
+    "email": "faysal@gmail.com",
+    "password": "fakhu657",
+    "name": "Admin User",
+    "role": "admin",
+    "createdAt": "2025-09-17T06:09:16.540Z"
+  },
+  {
+    "id": "2",
+    "email": "superadmin@fmosweb.com",
+    "password": "super123",
+    "name": "Super Admin",
+    "role": "super_admin",
+    "createdAt": "2025-09-17T06:09:16.540Z"
+  }
+]
